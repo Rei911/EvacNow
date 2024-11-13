@@ -147,12 +147,13 @@ class StatusItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,  // Aligns the content to both ends
       children: [
         Container(
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Color(0xFFB6BAC8), // Updated background color to #B6BAC8
             shape: BoxShape.circle,
             border: Border.all(color: Color(0xFF000000), width: 2), // Black border
           ),
@@ -162,7 +163,7 @@ class StatusItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF000000), // Black color for the icon
+                color: Colors.white, // White color for the icon
               ),
             ),
           ),
@@ -179,14 +180,15 @@ class StatusItem extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            Text(
-              status,
-              style: TextStyle(
-                fontSize: 12,
-                color: Color(0xFF000000), // Black color for the status text
-              ),
-            ),
           ],
+        ),
+        // Text on the right side of the status description
+        Text(
+          status,
+          style: TextStyle(
+            fontSize: 12,
+            color: Color(0xFF000000), // Black color for the status text
+          ),
         ),
       ],
     );
@@ -204,11 +206,11 @@ class FooterItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(icon, size: 24, color: Color(0xFF7D7D7D)),
+        Icon(icon, size: 24, color: Colors.white), // Set icon color to white
         SizedBox(height: 5),
         Text(
           label,
-          style: TextStyle(fontSize: 12, color: Color(0xFF7D7D7D)),
+          style: TextStyle(fontSize: 12, color: Colors.white), // Set label text color to white
         ),
       ],
     );
