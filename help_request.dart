@@ -146,55 +146,56 @@ class StatusItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,  // Aligns the content to both ends
-      children: [
-        Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: Color(0xFFB6BAC8), // Updated background color to #B6BAC8
-            shape: BoxShape.circle,
-            border: Border.all(color: Color(0xFF000000), width: 2), // Black border
-          ),
-          child: Center(
-            child: Text(
-              'A', // This can represent an icon or letter; adjust as needed
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white, // White color for the icon
+    return SingleChildScrollView(  // Make the row scrollable horizontally
+      scrollDirection: Axis.horizontal,  // Allow horizontal scrolling
+      child: Row(
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Color(0xFFB6BAC8), // Updated background color to #B6BAC8
+              shape: BoxShape.circle,
+              border: Border.all(color: Color(0xFF000000), width: 2), // Black border
+            ),
+            child: Center(
+              child: Text(
+                'A', // This can represent an icon or letter; adjust as needed
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white, // White color for the icon
+                ),
               ),
             ),
           ),
-        ),
-        SizedBox(width: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              description,
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF000000), // Black color for the description text
+          SizedBox(width: 10),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                description,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Color(0xFF000000), // Black color for the description text
+                ),
               ),
-            ),
-            SizedBox(height: 5),
-          ],
-        ),
-        // Text on the right side of the status description
-        Text(
-          status,
-          style: TextStyle(
-            fontSize: 12,
-            color: Color(0xFF000000), // Black color for the status text
+              SizedBox(height: 5),
+            ],
           ),
-        ),
-      ],
+          SizedBox(width: 10),
+          Text(
+            status,
+            style: TextStyle(
+              fontSize: 12,
+              color: Color(0xFF000000), // Black color for the status text
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
-
 
 class FooterItem extends StatelessWidget {
   final IconData icon;
@@ -206,11 +207,11 @@ class FooterItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(icon, size: 24, color: Colors.white), // Set icon color to white
+        Icon(icon, size: 24, color: Colors.white),  // Set icon color to white
         SizedBox(height: 5),
         Text(
           label,
-          style: TextStyle(fontSize: 12, color: Colors.white), // Set label text color to white
+          style: TextStyle(fontSize: 12, color: Color(0xFF7D7D7D)),
         ),
       ],
     );
