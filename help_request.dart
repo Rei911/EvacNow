@@ -14,7 +14,7 @@ class EvacNowPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.menu, size: 24, color: Color(0xFF7D7D7D)),
+                  Icon(Icons.list, size: 24, color: Colors.white),
                   Text(
                     'EvacNow',
                     style: TextStyle(
@@ -23,21 +23,21 @@ class EvacNowPage extends StatelessWidget {
                       color: Colors.white, // Text color remains white
                     ),
                   ),
-                  Icon(Icons.account_circle, size: 24, color: Color(0xFF7D7D7D)),
+                  Icon(Icons.account_circle, size: 30, color: Color(0xFF7D7D7D)),
                 ],
               ),
             ),
             // Content Section
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(30.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'STATUS HELP REQUEST',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF7D7D7D),
                       ),
@@ -95,22 +95,29 @@ class EvacNowPage extends StatelessWidget {
                             description: 'Status Pengguna',
                           ),
                           SizedBox(height: 20),
-                          ElevatedButton(
-                            onPressed: () {
-                              // Handle Done action
-                            },
-                            child: Text(
-                              'Done',
-                              style: TextStyle(color: Colors.white), // Set text color to white
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF6A4C93),  // Use backgroundColor instead of primary
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              padding: EdgeInsets.symmetric(vertical: 15),
-                            ),
-                          ),
+                          // Ganti bagian ElevatedButton dengan Row
+Row(
+  mainAxisAlignment: MainAxisAlignment.end,  // Menggeser ke kanan
+  children: [
+    ElevatedButton(
+      onPressed: () {
+        // Handle Done action
+      },
+      child: Text(
+        'Done',
+        style: TextStyle(color: Colors.white), // Set text color to white
+      ),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Color(0xFF6A4C93),  // Use backgroundColor instead of primary
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 15),
+      ),
+    ),
+  ],
+),
+
                         ],
                       ),
                     ),
